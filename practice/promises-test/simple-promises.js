@@ -3,7 +3,9 @@
  */
 
 function looper() {
-    console.log('printing from looper.');
+    for (var i = 0; i < 5; i++) {
+        console.log('printing from looper: ' + i);
+    }
 }
 
 module.exports = {

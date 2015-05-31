@@ -13,14 +13,15 @@ var OpenCraigslist = function() {
 	
 };
 
-var pageObject = require('./navigate.js'); 
+//var pageObject = require('./navigate.js');
 describe('Run craigslist program.', function() {
 	browser.ignoreSynchronization = true;
-  	it('Open criagslist page', function() {
+  	it('Open craigslist page', function() {
 		console.log('opening CL page');
 		//browser.get('http://newyork.craigslist.org/');
 		var clPage = new OpenCraigslist();
-		pageObject.navigates();
+        clPage.navigates();
+        expect(true).toBe(true);
 	});
 });
 

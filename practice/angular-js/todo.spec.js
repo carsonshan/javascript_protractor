@@ -11,5 +11,7 @@ describe('angularjs homepage todo list', function() {
     var todoList = element.all(by.repeater('todo in todoList.todos'));
     expect(todoList.count()).toEqual(3);
     expect(todoList.get(2).getText()).toEqual('write a protractor test');
+
+    //expect(3).toBe(4);
   });
 });

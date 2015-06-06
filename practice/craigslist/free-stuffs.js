@@ -38,7 +38,7 @@ function allAction() {
         .then(minMaxValue())
         .then(submit())
         .then(function() {
-            console.log('All done');
+            console.log('All done!');
         });
 }
 

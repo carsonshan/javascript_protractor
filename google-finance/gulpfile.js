@@ -34,7 +34,7 @@ var webdriver_standalone = require("gulp-protractor").webdriver_standalone;
 gulp.task('tester', function() {
     var myArgs = null;
     if(argv.suite == null || argv.suite == 'functional') {
-        myArgs = './test-functional/*.spec.js';
+        myArgs = './test-functional/dow-jones.spec.js';
     }
     else if(argv.suite == 'monitoring') {
         myArgs = './test-monitoring/*.spec.js';

@@ -1,0 +1,24 @@
+{
+  "stocks": [
+    {
+      "id": "01",
+      "symbol": "AAPL",
+      "desc": "Apple Inc"
+    },
+    {
+      "id": "02",
+      "symbol": "SD",
+      "desc": "SandRidge"
+    },
+    {
+      "id": "03",
+      "symbol": "MSFT",
+      "desc": "Microsoft"
+    },
+    {
+      "id": "04",
+      "symbol": "YHOO",
+      "desc": "Yahoo! Inc"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 var dow_jones = require('../helpers/dow-jones');
 var c = require('./../helpers/common');
-var jsonObj = browser.params.testSettings;
+var jsonObj = require('../test-data/test-settings.json');
 
 describe('When dow jones page is loaded', function() {
     browser.ignoreSynchronization = true;

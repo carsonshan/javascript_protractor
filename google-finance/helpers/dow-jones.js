@@ -20,6 +20,8 @@ function loadElement(elm, timeout) {
 
 }
 
+
+
 function getDJvalue() {
     return element(djValue).getText().then(function(num) {
        return Number(num.replace(',', ''));

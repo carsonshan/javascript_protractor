@@ -5,7 +5,7 @@ var protractor = require('gulp-protractor').protractor;
 //var webdriver = require('gulp-protractor').webdriver;
 var spawn = require('child_process').spawn;
 
-var argv = require('yargs').argv;
+
 
 
 
@@ -32,16 +32,9 @@ var webdriver_standalone = require("gulp-protractor").webdriver_standalone;
 
 // Setting up the test task
 gulp.task('tester', function() {
-    var myArgs = null;
-    if(argv.suite == null || argv.suite == 'functional') {
-        myArgs = './test-functional/*.spec.js';
-    }
-    else if(argv.suite == 'monitoring') {
-        myArgs = './test-monitoring/*.spec.js';
-    }
-    console.log(myArgs);
-    gulp.src(myArgs)
-        .pipe(protractor({
-
+    
+        gulp.src(['*.spec.js']).pipe(protractor({
+        	//seleniumAddress: 'http://localhost:4444/wd/hub'
+            configFile: 'protractor.conf.js'
         }));
 });

@@ -1,11 +1,13 @@
 /**
  * @author Zakir Sayed
  */
+var HtmlReporter = require('protractor-html-screenshot-reporter');
+
 exports.config = {
 	seleniumAddress: 'http://localhost:4444/wd/hub',
 /*	multiCapabilities: [ {
 		'browserName': 'chrome'
-	}]*/
+	}],*/
     capabilities: {
         'browserName': 'phantomjs',
 
@@ -22,31 +24,30 @@ exports.config = {
         'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
     }
   ,
+    specs: ['/test-functional/*.spec.js'],
 
-   params: {
-       testSettings : require('./test-settings.json')
-},
 
-  onPrepare: function() {
-    var folderName = (new Date()).toString().split(' ').splice(1, 4).join(' ');
-    var mkdirp = require('mkdirp');
-    var newFolder = "./reports/" + folderName;
-    require('jasmine-reporters');
+    onPrepare: function() {
+        // Add a screenshot reporter:
+        jasmine.getEnv().addReporter(new HtmlReporter({
+            baseDirectory: 'reports',
+            takeScreenShotsOnlyForFailedSpecs: false,
+        }));
+    },
 
-    mkdirp(newFolder, function(err) {
-      if (err) {
-        console.error(err);
-      } else {
-        jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(newFolder, true, true));
-      }
-    });
-  },
 
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000,
-    isVerbose: true,
-    includeStackTrace: true
-  }
+    // ----- Options to be passed to minijasminenode -----
+    jasmineNodeOpts: {
+        // onComplete will be called just before the driver quits.
+        onComplete: null,
+        // If true, display spec names.
+        isVerbose: false,
+        // If true, print colors to the terminal.
+        showColors: true,
+        // If true, include stack traces in failures.
+        includeStackTrace: true,
+        // Default time to wait in ms before a test fails.
+        defaultTimeoutInterval: 10000
+    }
   
 };

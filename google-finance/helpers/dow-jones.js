@@ -67,12 +67,12 @@ function link3() {
 }
 
 function clickOnEachTab() {
-        link1();
-        link2();
-        link3();
-    element(by.linkText('News')).click();
-    element(by.linkText('Historical prices')).click();
-    element(by.linkText('Summary')).click();
+    link2();
+    link1();
+    link3();
+    //element(by.linkText('News')).click();
+    //element(by.linkText('Historical prices')).click();
+    //element(by.linkText('Summary')).click();
 }
 /*
 

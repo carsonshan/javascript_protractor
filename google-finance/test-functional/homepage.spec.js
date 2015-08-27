@@ -24,27 +24,30 @@ describe('When the homepage is loaded', function() {
 
     describe('Here is the looper', function() {
         for(var i=0; i<5; i++) {
-          it('should expect 2 to be 2', function() {
-               expect(2).toBe(2);
-               expect(4).toBe(4);
+          it('should expect 2 to be 2. Count = ' + i, function() {
+              //console.log('Count value = ' + i);
+              c.waitObject(elmExists, 2000).then(function(value) {
+                  c.printPretty('Exists value', value);
+              });
+
+              c.waitObject(elmNotExists, 2000).then(function(value) {
+                  c.printPretty('Not exist value', value);
+              });
+               //
+               //expect(2).toBe(2);
+               //expect(4).toBe(4);
           });
         }
     });
 
-
-
-    function waitObject(elm, timeout) {
-        return browser.driver.wait(function() {
-            return elm.isPresent().then(function(res) {
-                return res;
-            });
-        }, timeout);
-
-    }
-
     it('Check to see if the object exists', function() {
-        console.log(waitObject(elmExists, 2000));
-//        console.log(waitObject(elmNotExists, 2000));
+        c.waitObject(elmExists, 2000).then(function(value) {
+            c.printPretty('Exists value', value);
+        });
+
+        c.waitObject(elmNotExists, 2000).then(function(value) {
+            c.printPretty('Not exist value', value);
+        });
 
     });
 
@@ -52,7 +55,6 @@ describe('When the homepage is loaded', function() {
         element(dow_jones.djLink).click();
         expect(element(by.id('chart_anchor')).isDisplayed()).toBe(true);
     });
-
 
     it('should get content of all elements in a table', function() {
         element.all(by.css('div.bld')).each(function(elm) {
@@ -62,6 +64,5 @@ describe('When the homepage is loaded', function() {
 
         });
     });
-
 
 });

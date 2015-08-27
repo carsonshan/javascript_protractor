@@ -4,26 +4,32 @@
 var HtmlReporter = require('protractor-html-screenshot-reporter');
 
 exports.config = {
-	seleniumAddress: 'http://localhost:4444/wd/hub',
+	//seleniumAddress: 'http://localhost:4444/wd/hub',
+
+    sauceUser: "zakirhere",
+        sauceKey: "22adc0d1-780d-4564-b722-9e4cb5ebb5a8",
+//    sauceSeleniumAddress: "this is optional: default is ondemand.saucelabs.com:80/wd/hub, but localhost:4445/wd/hub is also valid for when you're running sc locally and ondemand doesn't work",
+    capabilities: {
+        'tunnel-identifier': 'sauce-tunnel-id',
+        'browserName': 'phantomjs',
+        'phantomjs.binary.path': require('phantomjs').path,
+        'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+    },
+
+
+
 /*	multiCapabilities: [ {
 		'browserName': 'chrome'
 	}],*/
+
+
     capabilities: {
         'browserName': 'phantomjs',
-
-        /*
-         * Can be used to specify the phantomjs binary path.
-         * This can generally be ommitted if you installed phantomjs globally.
-         */
         'phantomjs.binary.path': require('phantomjs').path,
-
-        /*
-         * Command line args to pass to ghostdriver, phantomjs's browser driver.
-         * See https://github.com/detro/ghostdriver#faq
-         */
         'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
-    }
-  ,
+    },
+
+
     specs: ['/test-functional/*.spec.js'],
 
 
@@ -47,7 +53,7 @@ exports.config = {
         // If true, include stack traces in failures.
         includeStackTrace: true,
         // Default time to wait in ms before a test fails.
-        defaultTimeoutInterval: 10000
+        defaultTimeoutInterval: 40000
     }
-  
+//this is dhaval test 
 };

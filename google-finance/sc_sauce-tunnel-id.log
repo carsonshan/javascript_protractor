@@ -1,0 +1,21 @@
+20150622 025530.649 [27808] Sauce Connect 4.3.7, build 1660 249d939
+20150622 025530.657 [27808] Trying to autodetect proxy settings
+20150622 025530.724 [27808] Starting up; pid 27808
+20150622 025530.728 [27808] Command line arguments: C:\Users\zsayed\node_modules\sauce-tunnel\vendor\win32\bin\sc.exe -u zakirhere -k **** -i sauce-tunnel-id
+20150622 025530.733 [27808] Using no proxy for connecting to Sauce Labs REST API.
+20150622 025530.766 [27808] Resolving saucelabs.com to 162.222.73.28 took 31 ms.
+20150622 025604.184 [27808] PROXY *** scproxy started ***
+20150622 025604.199 [27808] PROXY found DNS server 192.168.18.189
+20150622 025604.200 [27808] PROXY found DNS server 192.168.1.1
+20150622 025604.201 [27808] PROXY found DNS server 192.168.1.1
+20150622 025604.938 [27808] Started scproxy on port 61160.
+20150622 025604.938 [27808] Please wait for 'you may start your tests' to start your tests.
+20150622 025604.940 [27808] Starting secure remote tunnel VM...
+20150622 025637.184 [27808] GET https://saucelabs.com/rest/v1/zakirhere/tunnels?full=1: Timeout was reached.
+20150622 025637.185 [27808] Error shutting down overlapping tunnels.
+20150622 025637.187 [27808] Sauce Connect could not establish a connection.
+20150622 025637.188 [27808] Please check your firewall and proxy settings.
+20150622 025637.189 [27808] You can also use sc --doctor to launch Sauce Connect in diagnostic mode.
+20150622 025637.190 [27808] Cleaning up.
+20150622 025712.184 [27808] GET https://saucelabs.com/rest/v1/zakirhere/tunnels?full=1: Timeout was reached.
+20150622 025712.187 [27808] Goodbye.

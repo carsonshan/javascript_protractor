@@ -9,8 +9,8 @@ var jsonObj = require('../test-data/test-settings.json');
 describe('When dow jones page is loaded', function() {
     browser.ignoreSynchronization = true;
     beforeEach(function() {
-        //browser.get('https://www.google.com/finance');
-        //element(dow_jones.djLink).click();
+        browser.get('https://www.google.com/finance');
+        element(dow_jones.djLink).click();
     });
 
     function navStock(stock, stockName) {
@@ -25,35 +25,43 @@ describe('When dow jones page is loaded', function() {
     it('Should load different stocks value', function() {
         console.log(jsonObj.stocks[0].symbol);
 
-        //var arrStocks = ['AAPL', 'SD', 'MSFT', 'ORCL', 'YHOO'];
-        //var arrName = ['Apple Inc', 'SandRidge', 'Microsoft', 'Oracle', 'Yahoo!'];
-
         for(var i=0; i<jsonObj.stocks.length; i++) {
             navStock(jsonObj.stocks[i].symbol, jsonObj.stocks[i].desc);
         }
-        //for(var i=0; i<arrStocks.length; i++) {
-        //    navStock(arrStocks[i], arrName[i]);
-        //}
+    });
+
+    describe('When an array value is passed', function() {
+        var arrStocks = ['AAPL', 'SD', 'MSFT', 'ORCL', 'YHOO'];
+        var res;
+
+        arrStocks.every(function(element, index, array) {
+            it('Should print the array value: ' + element, function () {
+                console.log('myelement = ' + array[index]);
+                console.log('index = ' + index);
+            });
+            return true;
+        });
+        //console.log('res:', res);
+    });
+
+    it('should verify that 25 latest news items are loaded', function() {
+        console.log('Verifying the news items count');
+        expect(dow_jones.getNewsItemsCount()).toEqual(26);
+
     });
 
 
-    /*    it('should verify that 25 latest news items are loaded', function() {
-            console.log('Verifying the news items count');
-            expect(dow_jones.getNewsItemsCount()).toEqual(26);
-
-        });*/
-/*
     it('Should click on each index element', function() {
         //element(by.linkText('News')).click();
         //element(by.linkText('Historical prices')).click();
         //element(by.linkText('Summary')).click();
         dow_jones.clickOnEachTab();
-    });*/
+    });
 
-/*    it('should print the content of all news item', function() {
+    it('should print the content of all news item', function() {
         //dow_jones.loadElement(element(by.css('#news_div_cont')));
         //browser.driver.sleep(8000);
         dow_jones.printNewsContent();
-    });*/
+    });
 
 });

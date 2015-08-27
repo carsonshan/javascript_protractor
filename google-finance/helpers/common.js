@@ -13,8 +13,20 @@ function printPretty(msg, elm) {
     console.log(msg + ' = ' + JSON.stringify(elm));
 }
 
+
+function waitObject(elm, timeout) {
+    return browser.driver.wait(function() {
+        return elm.isPresent().then(function(res) {
+            return res;
+        });
+    }, timeout).then(null, function() {
+        return false;
+    });
+}
+
 module.exports = {
     deepSleep : deepSleep,
-    printPretty : printPretty
+    printPretty : printPretty,
+    waitObject : waitObject
 };
 

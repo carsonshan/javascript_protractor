@@ -12,4 +12,7 @@ exports.config = {
 
   framework: 'cucumber',
 
+	onPrepare: function() {
+		browser.ignoreSynchronization = true;		
+	}
 };

@@ -10,7 +10,16 @@ exports.config = {
 
   baseUrl: 'http://google.com',
 
-  framework: 'cucumber',
+  directConnect: true,
+
+  framework: 'custom',
+
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
+
+  cucumberOpts: {
+    require: 'features/sampleSteps.js',
+    format: 'summary'
+  },
 
 	onPrepare: function() {
 		browser.ignoreSynchronization = true;		

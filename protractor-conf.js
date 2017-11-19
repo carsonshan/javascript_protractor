@@ -3,7 +3,7 @@ var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 exports.config = {
 
   specs: [
-    'google/*.spec.js'
+    'aut/google/*.spec.js'
   ],
 
   capabilities: {

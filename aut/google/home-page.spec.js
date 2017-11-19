@@ -1,8 +1,8 @@
 /**
  * Created by zak on 11/19/17.
  */
-var EC = require('../waiter/ec-extended').EC;
-var po = require('../page-objects/po-google-homepage');
+var EC = require('../../waiter/ec-extended').EC;
+var po = require('../../page-objects/po-google-homepage');
 
 describe('google homepage', function () {
     var searcHTextbox = po.searchbox;

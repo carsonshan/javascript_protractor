@@ -1,8 +1,13 @@
 {
   "dependencies": {
+    "frisby": "^2.0.8",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.4.2",
+    "gulp-protractor": "^4.1.0",
     "protractor": "^5.2.0"
   },
   "devDependencies": {
-    "protractor-jasmine2-html-reporter": "0.0.7"
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "yargs": "^10.0.3"
   }
 }

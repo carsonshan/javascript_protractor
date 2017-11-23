@@ -16,8 +16,8 @@ gulp.task('test-e2e', function () {
         }));
 });
 
-gulp.task('test-api', function () {
-    var specArgs = 'api/api_spec.js';
+gulp.task('test-tests-api', function () {
+    var specArgs = 'tests-api/sample.spec.js';
     if(argv.spec) specArgs = argv.spec;
     return gulp.src(specArgs)
         .pipe(jasmine());

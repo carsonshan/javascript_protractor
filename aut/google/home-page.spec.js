@@ -3,6 +3,7 @@
  */
 var EC = require('../../waiter/ec-extended').EC;
 var po = require('../../page-objects/po-google-homepage');
+var dg = require('../../helpers/data/data-generator');
 
 describe('google homepage', function () {
     var searcHTextbox = po.searchbox;
@@ -17,11 +18,11 @@ describe('google homepage', function () {
 
     describe('user search', function () {
         it('validate search for zakir keyword', function () {
-
+            dg.randomName();
         });
 
         it('validate i am lucky search for zakir keyword', function () {
-
+            dg.randomCard();
         });
     })
 

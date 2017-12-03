@@ -1,19 +1,19 @@
-var faker = require('faker');
+const faker = require('faker');
 
-function randomName() {
-    return faker.name.findName();
-}
+var randomizer = {
+    randomName: function () {
+        return faker.name.findName();
+    },
 
-function randomEmail() {
-    return ffaker.internet.email();
-}
+    randomEmail: function() {
+        return faker.internet.email();
+    },
 
-function randomCard() {
-    return faker.helpers.createCard();
-}
+    randomCard: function () {
+        return faker.helpers.createCard();
+    }
 
-module.exports = {
-    randomName : randomName,
-    randomEmail : randomEmail,
-    randomCard : randomCard
 };
+
+module.exports = randomizer;
+

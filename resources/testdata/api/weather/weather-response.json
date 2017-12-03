@@ -1,0 +1,157 @@
+{
+  "_response": {
+    "url": "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appId=7dee28a2a7ac64e7db43b8d44e979006",
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "_headers": {
+        "server": [
+          "openresty"
+        ],
+        "date": [
+          "Sat, 25 Nov 2017 19:18:22 GMT"
+        ],
+        "content-type": [
+          "application/json; charset=utf-8"
+        ],
+        "content-length": [
+          "443"
+        ],
+        "connection": [
+          "close"
+        ],
+        "x-cache-key": [
+          "/data/2.5/weather?appId=7dee28a2a7ac64e7db43b8d44e979006&q=london,uk"
+        ],
+        "access-control-allow-origin": [
+          "*"
+        ],
+        "access-control-allow-credentials": [
+          "true"
+        ],
+        "access-control-allow-methods": [
+          "GET, POST"
+        ]
+      }
+    },
+    "ok": true,
+    "body": {
+      "_readableState": {
+        "objectMode": false,
+        "highWaterMark": 16384,
+        "buffer": {
+          "head": null,
+          "tail": null,
+          "length": 0
+        },
+        "length": 0,
+        "pipes": null,
+        "pipesCount": 0,
+        "flowing": true,
+        "ended": true,
+        "endEmitted": true,
+        "reading": false,
+        "sync": false,
+        "needReadable": false,
+        "emittedReadable": false,
+        "readableListening": false,
+        "resumeScheduled": false,
+        "destroyed": false,
+        "defaultEncoding": "utf8",
+        "awaitDrain": 0,
+        "readingMore": false,
+        "decoder": null,
+        "encoding": null
+      },
+      "readable": false,
+      "domain": null,
+      "_events": {},
+      "_eventsCount": 4,
+      "_writableState": {
+        "objectMode": false,
+        "highWaterMark": 16384,
+        "finalCalled": false,
+        "needDrain": false,
+        "ending": true,
+        "ended": true,
+        "finished": true,
+        "destroyed": false,
+        "decodeStrings": true,
+        "defaultEncoding": "utf8",
+        "length": 0,
+        "writing": false,
+        "corked": 0,
+        "sync": false,
+        "bufferProcessing": false,
+        "writecb": null,
+        "writelen": 0,
+        "bufferedRequest": null,
+        "lastBufferedRequest": null,
+        "pendingcb": 0,
+        "prefinished": true,
+        "errorEmitted": false,
+        "bufferedRequestCount": 0,
+        "corkedRequestsFree": {
+          "next": null,
+          "entry": null
+        }
+      },
+      "writable": false,
+      "allowHalfOpen": true,
+      "_transformState": {
+        "needTransform": false,
+        "transforming": false,
+        "writecb": null,
+        "writechunk": null,
+        "writeencoding": "buffer"
+      }
+    },
+    "bodyUsed": true,
+    "size": 0,
+    "timeout": 5000,
+    "_abort": false,
+    "_bytes": 443
+  },
+  "_body": {
+    "coord": {
+      "lon": -0.13,
+      "lat": 51.51
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 276.35,
+      "pressure": 1019,
+      "humidity": 76,
+      "temp_min": 275.15,
+      "temp_max": 278.15
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 4.1,
+      "deg": 260
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1511635800,
+    "sys": {
+      "type": 1,
+      "id": 5168,
+      "message": 0.0095,
+      "country": "GB",
+      "sunrise": 1511595384,
+      "sunset": 1511625528
+    },
+    "id": 2643743,
+    "name": "London",
+    "cod": 200
+  }
+}
